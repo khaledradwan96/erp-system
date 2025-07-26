@@ -12,7 +12,7 @@ function Login() {
 
     if (userName === "admin" && password === "admin") {
       localStorage.setItem("user", "admin");
-      navigate("/dashboard"); // Go to dashboard after successful login
+      navigate("/dashboard", { replace: true });
     } else {
       alert("incorrect username or password");
     }
@@ -23,7 +23,7 @@ function Login() {
         onSubmit={handelLogin}
         className="bg-white p-6 rounded shadow-md w-96"
       >
-        <h2 className="text-3xl font-bold mb-6 text-center text-blue-600">
+        <h2 className="text-5xl font-bold mb-6 text-center text-teal-500">
           Login
         </h2>
 
@@ -38,7 +38,7 @@ function Login() {
             type="text"
             id="userName"
             placeholder="Enter your username"
-            className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
             required
@@ -56,7 +56,7 @@ function Login() {
             type="password"
             id="password"
             placeholder="Enter your password"
-            className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -64,7 +64,7 @@ function Login() {
         </div>
         <button
           type="submit"
-          className="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-200"
+          className="w-full cursor-pointer bg-teal-500 hover:bg-teal-600 text-white py-2 rounded-lg transition duration-200"
         >
           login
         </button>

@@ -4,21 +4,31 @@ import "./App.css";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
+
         <Route
-          path="/dashboard"
+          path="/"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Layout />
             </ProtectedRoute>
           }
-        />
+        >
+          {/* === Default Page ===  */}
+          <Route index element={<Navigate to="dashboard" replace />} />
+
+          {/* === App Pages ===  */}
+          <Route path="dashboard" element={<Dashboard />} />
+
+          {/* === NotFound link ===  */}
+          <Route path="*" element={<Navigate to="dashboard" replace />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
