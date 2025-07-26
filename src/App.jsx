@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/Layout";
+import Sales from "./pages/Sales";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
 
           {/* === App Pages ===  */}
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="sales" element={<Sales />} />
 
           {/* === NotFound link ===  */}
           <Route path="*" element={<Navigate to="dashboard" replace />} />
