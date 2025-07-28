@@ -6,6 +6,7 @@ import {
   FaWarehouse,
   FaFileInvoice,
   FaUsers,
+  FaBars,
 } from "react-icons/fa";
 
 function Sidebar() {
@@ -24,8 +25,8 @@ function Sidebar() {
   };
 
   return (
-    <div className="h-screen w-64 bg-teal-600 text-white flex flex-col shadow-lg">
-      <div className="flex items-center justify-between p-4 text-2xl font-bold border-b-2 border-teal-500">
+    <div className="flex flex-col h-screen  bg-teal-600 text-white ">
+      <div className=" flex items-center justify-between p-4 text-2xl font-bold border-b-2 border-teal-500">
         <span>ERP System</span>
         <button
           onClick={handleLogout}
