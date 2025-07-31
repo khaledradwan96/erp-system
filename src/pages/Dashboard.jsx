@@ -1,6 +1,15 @@
 // ===== Dashboard.jsx =====
 import React from "react";
-import { getTotalSales } from "../data/salesData";
+import { getTotalSales, getSalesByDate } from "../data/dataFunctions";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
 function Dashboard() {
   const totalSales = getTotalSales();
@@ -19,7 +28,26 @@ function Dashboard() {
       {/* === Chart === */}
       <div className="bg-white rounded-xl shadow p-4">
         <h3 className="text-lg font-semibold mb-2">Sales Overview</h3>
-        <div className="h-64">{/* Placeholder for chart component */}</div>
+        <ResponsiveContainer width="100%" height={250}>
+          <LineChart data={getSalesByDate()}>
+            <CartesianGrid
+              stroke="#ccc"
+              strokeDasharray="5 5"
+              horizontal={true}
+              vertical={false}
+            />
+
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey="total"
+              stroke="#14b8a6"
+              strokeWidth={2}
+            />
+          </LineChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );

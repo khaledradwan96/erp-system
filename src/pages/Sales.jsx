@@ -1,9 +1,7 @@
 // ===== Sales.jsx =====
 import React from "react";
-import salesData, {
-  getTotalSales,
-  getTotalTransactions,
-} from "../data/salesData";
+import salesData from "../data/salesData";
+import { getTotalSales, getTotalTransactions } from "../data/dataFunctions";
 
 function Sales() {
   const totalSales = getTotalSales();

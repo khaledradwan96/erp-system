@@ -6,7 +6,6 @@ import {
   FaWarehouse,
   FaFileInvoice,
   FaUsers,
-  FaBars,
 } from "react-icons/fa";
 
 function Sidebar() {
@@ -15,7 +14,7 @@ function Sidebar() {
     { name: "Sales", path: "/sales", icon: <FaChartLine /> },
     { name: "Inventory", path: "/inventory", icon: <FaWarehouse /> },
     { name: "Accounting", path: "/accounting", icon: <FaFileInvoice /> },
-    { name: "Human Resource", path: "/human-resource", icon: <FaUsers /> },
+    { name: "Human Resource", path: "/hr", icon: <FaUsers /> },
   ];
 
   const navigate = useNavigate();
